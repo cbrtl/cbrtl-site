@@ -2,7 +2,7 @@ baseURL: https://cbrtl.github.io
 
 title: cbrtl
 paginate: 7
-theme: papermod
+theme: papermodx
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -77,9 +77,9 @@ params:
     Title: "cbrtl"
     Content: >
       cbrtl is a small, tight knit group of programmers and open source sorcerers who like 
-      to craft fun projects together and build a community.
-
-      - We are primarily a [GitHub Organization](https://github.com/cbrtl).
+      to craft fun projects together and build a community.  
+      
+      We are primarily a [GitHub Organization](https://github.com/cbrtl).
 
   socialIcons:
     - name: github

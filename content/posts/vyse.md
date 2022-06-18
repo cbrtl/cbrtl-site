@@ -2,7 +2,7 @@
 author: "Srijan Paul"
 title: "vyse"
 date: "2022-06-15"
-description: "Connecting Help and Transparency"
+description: ""
 tags: ["project", "community"]
 ShowBreadCrumbs: true 
 ---
@@ -30,8 +30,8 @@ ShowBreadCrumbs: true
   </p>
 </p>
 
-![CI Status](https://github.com/srijan-paul/snap/actions/workflows/test.yml/badge.svg)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[CI Status](https://github.com/srijan-paul/snap/actions/workflows/test.yml/badge.svg)
+[[MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
 Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games. Programmers familiar with Lua/Javascript can pick up the language within an hour.
 Vyse also comes with a C++ API for frictionless embedding in projects.
