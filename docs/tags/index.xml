@@ -4,10 +4,6 @@
     <title>Tags on cbrtl</title>
     <link>https://cbrtl.github.io/tags/</link>
     <description>Recent content in Tags on cbrtl</description>
-    <image>
-      <url>https://cbrtl.github.io/papermod-cover.png</url>
-      <link>https://cbrtl.github.io/papermod-cover.png</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 15 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -17,6 +13,7 @@
       
       <guid>https://cbrtl.github.io/tags/community/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -26,6 +23,7 @@
       
       <guid>https://cbrtl.github.io/tags/project/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -35,6 +33,7 @@
       
       <guid>https://cbrtl.github.io/tags/guide/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -44,6 +43,7 @@
       
       <guid>https://cbrtl.github.io/tags/faq/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -53,6 +53,7 @@
       
       <guid>https://cbrtl.github.io/tags/guidelines/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
     <item>
@@ -62,6 +63,7 @@
       
       <guid>https://cbrtl.github.io/tags/general/</guid>
       <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
     </item>
     
   </channel>

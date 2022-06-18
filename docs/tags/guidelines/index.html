@@ -6,46 +6,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>guidelines | cbrtl</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="">
 <meta name="description" content="A foundry for programmers who like making stufff :)">
 <meta name="author" content="Srijan Paul">
-<link rel="canonical" href="https://cbrtl.github.io/tags/guidelines/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.2d6dbfc6e0f8a1db1c9d082a76dc11d094328cf63f247bbc2421dfaa7f2bb170.css" integrity="sha256-LW2/xuD4odscnQgqdtwR0JQyjPY/JHu8JCHfqn8rsXA=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://cbrtl.github.io/icon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://cbrtl.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://cbrtl.github.io/icon.ico">
+<link rel="canonical" href="https://cbrtl.github.io/tags/guidelines/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.e1f7e5ff0e07a5d173b318a92dbd5cb835615c4f6c69ba838279a5619264e7b8.css" integrity="sha256-4ffl/w4HpdFzsxipLb1cuDVhXE9sabqDgnmlYZJk57g=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://cbrtl.github.io/favicon.ico">
 <link rel="apple-touch-icon" href="https://cbrtl.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://cbrtl.github.io/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.100.2" />
 <link rel="alternate" type="application/rss+xml" href="https://cbrtl.github.io/tags/guidelines/index.xml">
-<meta property="og:title" content="guidelines" />
+<meta name="twitter:image" content="https://cbrtl.github.io/papermod-cover.png" />
+    <meta name="twitter:card" property="twitter:card" content="summary" />
+<meta name="twitter:title" content="guidelines | cbrtl" />
+<meta name="twitter:description" content="A foundry for programmers who like making stufff :)" />
+<meta name="twitter:site" content="@novoreorx" />
+<meta name="twitter:creator" content="@novoreorx" />
+<meta property="og:title" content="guidelines | cbrtl" />
 <meta property="og:description" content="A foundry for programmers who like making stufff :)" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://cbrtl.github.io/tags/guidelines/" /><meta property="og:image" content="https://cbrtl.github.io/papermod-cover.png"/>
+<meta property="og:url" content="https://cbrtl.github.io/tags/guidelines/" />
+    <meta property="og:image" content="https://cbrtl.github.io/papermod-cover.png"/>
+    <meta property="og:image" content="https://cbrtl.github.io/assets/icon.ico"/>
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cbrtl.github.io/papermod-cover.png"/>
 
-<meta name="twitter:title" content="guidelines"/>
-<meta name="twitter:description" content="A foundry for programmers who like making stufff :)"/>
-
-</head>
-
-<body class="list" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
 <noscript>
-    <style type="text/css">
+    <style>
         #theme-toggle,
         .top-link {
             display: none;
@@ -55,15 +39,14 @@
     <style>
         @media (prefers-color-scheme: dark) {
             :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary-bg: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
             }
 
             .list {
@@ -81,6 +64,77 @@
 
     </style>
 </noscript>
+
+</head>
+
+<body class="list" id="top"><script data-no-instant>
+function switchTheme(theme) {
+  switch (theme) {
+    case 'light':
+      document.body.classList.remove('dark');
+      break;
+    case 'dark':
+      document.body.classList.add('dark');
+      break;
+    
+    default:
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+  }
+}
+
+function isDarkTheme() {
+  return document.body.className.includes("dark");
+}
+
+function getPrefTheme() {
+  return localStorage.getItem("pref-theme");
+}
+
+function setPrefTheme(theme) {
+  switchTheme(theme)
+  localStorage.setItem("pref-theme", theme);
+}
+
+const toggleThemeCallbacks = {}
+toggleThemeCallbacks['main'] = (isDark) => {
+  
+  if (isDark) {
+    setPrefTheme('light');
+  } else {
+    setPrefTheme('dark');
+  }
+}
+
+
+
+
+window.addEventListener('toggle-theme', function() {
+  
+  const isDark = isDarkTheme()
+  for (const key in toggleThemeCallbacks) {
+    toggleThemeCallbacks[key](isDark)
+  }
+});
+
+
+function toggleThemeListener() {
+  
+  window.dispatchEvent(new CustomEvent('toggle-theme'));
+}
+
+</script>
+<script>
+  
+  (function() {
+    const defaultTheme = 'auto';
+    const prefTheme = getPrefTheme();
+    const theme = prefTheme ? prefTheme : defaultTheme;
+
+    switchTheme(theme);
+  })();
+</script>
 
 <header class="header">
     <nav class="nav">
@@ -111,23 +165,23 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://cbrtl.github.io/archives" title="Archive">
-                    <span>Archive</span>
+                <a href="https://cbrtl.github.io/archives/" title="Archive"
+                >Archive
                 </a>
             </li>
             <li>
-                <a href="https://cbrtl.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://cbrtl.github.io/categories/" title="Categories"
+                >Categories
                 </a>
             </li>
             <li>
-                <a href="https://cbrtl.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
+                <a href="https://cbrtl.github.io/search/" title="Search (Alt &#43; /)"data-no-instant accesskey=/
+                >Search
                 </a>
             </li>
             <li>
-                <a href="https://cbrtl.github.io/tags/" title="Tags">
-                    <span>Tags</span>
+                <a href="https://cbrtl.github.io/tags/" title="Tags"
+                >Tags
                 </a>
             </li>
         </ul>
@@ -138,87 +192,124 @@
   <h1>guidelines</h1>
 </header>
 
+
+
+
+
+
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Showcasing your project on cbrtl</h2>
+    <h2>Showcasing your project on cbrtl
+    </h2>
   </header>
   <section class="entry-content">
-    <p>Helloo again.
-This post intends to establish some minor ordinances surrounding project ideas and showcases. cbrtl was created with the intent of promoting the spirit of Open Source. Often times, some of the most interesting Open Source projects live in lesser known corners of GitHub, gathering dust on a lonesome profile with 3-5 followers and an occasionally active commit graph.
-With cbrtl, we can shine some light on these pieces of software, benefitting both the creator/maintainer and the people who can use these projects as reference....</p>
+    
+      <p>Some things to keep in mind while adding your project</p>
+    
   </section>
-  <footer class="entry-footer">April 28, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;srijan_</footer>
+  <footer class="entry-footer"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>April 28, 2021</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="https://cbrtl.github.io/tags/guidelines/">guidelines</a><a href="https://cbrtl.github.io/tags/community/">community</a></span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
+  <span>4 min</span></span>
+</footer>
   <a class="entry-link" aria-label="post link to Showcasing your project on cbrtl" href="https://cbrtl.github.io/posts/project-showcase/"></a>
 </article>
     </main>
-    <footer class="footer">
-    <span>&copy; 2022 <a href="https://cbrtl.github.io">cbrtl</a></span>
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
-    </span>
+    
+<footer class="footer">
+  <span>&copy; 2022 <a href="https://cbrtl.github.io">cbrtl</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://github.com/reorx/hugo-PaperModX/" rel="noopener" target="_blank">PaperModX</a>
+  </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
     }
 
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
         });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
     });
-
+  })();
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
 </script>
 <script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
 </script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
 </body>
 
 </html>
