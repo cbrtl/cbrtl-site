@@ -181,43 +181,6 @@ The slider controls the depth of the tree.
 The next task would be adding a subtle animation to reveal the image when the mouse hovers over the canvas. If you want to contribute, you can fork this repo and create a pull request.</p>
 <p>If you want to explore more, check out the slider and the entire source code on <a href="http://github.com/cbrtl/qd-compression">GitHub</a>. And don&rsquo;t hesitate to ask us any questions or give suggestions. We&rsquo;re always happy to chat on GitHub!</p>
 <p><em>Ref: <a href="https://en.wikipedia.org/wiki/Quadtree">Wikipedia</a></em></p>
-]]></content:encoded></item><item><title>Project: Zuzu</title><link>https://cbrtl.github.io/posts/zuzu/</link><pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/zuzu/</guid><description>Zuzu is a static site generator that converts all your markdown files into static htmls pages. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets.</description><content:encoded><![CDATA[<h1 id="zuzu">Zuzu</h1>
-<blockquote>
-<p>Static Site Generator</p>
-</blockquote>
-<h3 id="zuzu-is-a-minimal-static-site-generator">Zuzu is a minimal static site generator.</h3>
-<p>Zuzu converts all your markdown files into static htmls pages to be rendered quickly. It uses Github falvoured Markdown CSS and highlight js to beautify code snippets. <a href="https://anubhavp.me/blog">This blog</a>, for example, has been written using this generator. This enables noobs like me to write blogs without having to learn a lot of code! All you need to do is to write a markdown file and it will be rendered as a page ;)</p>
-<h2 id="how-does-it-work-">How does it work ?</h2>
-<p>Zuzu parses the markdown file using <em>javascript</em> and renders it as <em>html documents</em>. It then saves the html files in the <code>public</code> folder. The public folder, with <code>index.html</code> file, is the final output of the generator and this can be deployed and hosted in various platforms. This particular blog has been deployed on <a href="https://anubhavp.me/blog/">Github Pages</a>.</p>
-<h3 id="1-create-a-markdown-file">1. Create a markdown file</h3>
-<pre><code># This is a title
-This is a paragraph
-This is another paragraph
-This is a list:
-* Item 1
-* Item 2
-* Item 3
-This is a code block:
-```
-print(&quot;Hello World&quot;)
-```
-This is a table:
-| Column 1 | Column 2 | Column 3 |
-| -------- | -------- | -------- |
-| 1        | 2        | 3        |
-| 4        | 5        | 6        |
-| 7        | 8        | 9        |
-This is a link: [zuzu](https://anubhavp.me/blog/zuzu.html)
-</code></pre>
-<h3 id="2-run-the-generator-and-find-your-blog">2. Run the generator and find your blog</h3>
-<p>Run <code>npm run generate</code> in the console. Zuzu is also available as a CLI tool. You can install it using <code>npm install -g zuzu</code>. Then run <code>npx zuzussg</code> in the console. This will generate the html files in the <code>public</code> folder. You can then deploy the <code>public</code> folder to any hosting platform.
-You&rsquo;ll now see the blog in the public folder! Run the index.html file in your browser to see your blog. You may now deploy your site
-to a server. Zuzu also supports CI/CD. You can use Github Actions to automatically deploy your site to Github Pages.</p>
-<h3 id="you-can-find-the-working-in-the-repo-herehttpsgithubcomcodebotxzuzu">You can find the working in the repo <a href="https://github.com/codebotx/zuzu/">here</a></h3>
-<h4 id="to-do">To-do</h4>
-<ul>
-<li>Add another template file in the initial folder with index.html and respective assets.</li>
-</ul>
 ]]></content:encoded></item><item><title>Project: Vyse</title><link>https://cbrtl.github.io/posts/vyse/</link><pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/vyse/</guid><description>A dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games.</description><content:encoded><![CDATA[<p>Sometime during my 2nd year in college, I&rsquo;d made a hobby programming language that turned out quite well.
 It&rsquo;s named &ldquo;Vyse&rdquo;, after <a href="https://dota2.fandom.com/wiki/Scythe_of_Vyse">Guinsoo&rsquo;s Scythe of Vyse</a> from DotA.</p>
 <p>Vyse is a dynamically typed, interpreted and fast scriptling language inspired by Lua for rapid prototyping of applications like video games.
