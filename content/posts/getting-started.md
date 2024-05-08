@@ -4,7 +4,8 @@ title: "Getting started with cbrtl and FOSS"
 date: "2021-04-27"
 description: "Grinding gears"
 tags: ["guide", "community"]
-ShowBreadCrumbs: true 
+ShowBreadCrumbs: true
+weight: 2 
 ---
 
 So you read up on open source, read up on [cbrtl](https://cbrtl.github.io/posts/what-and-why/) and want to start hacking.
