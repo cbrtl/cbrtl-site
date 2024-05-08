@@ -5,7 +5,6 @@ date: "2021-04-28"
 description: "Some things to keep in mind while adding your project"
 tags: ["guidelines", "community"]
 ShowBreadCrumbs: true 
-weight: 3
 ---
 
 This page intends to establish some minor ordinances surrounding project ideas and showcases.
