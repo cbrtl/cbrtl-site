@@ -55,6 +55,18 @@ params:
   ShowToc: true
   # comments: false
   images: ["papermod-cover.png", "assets/icon.ico"]
+  giscus:
+    repo: "cbrtl/cbrtl.github.io"
+    repoID: "MDEwOlJlcG9zaXRvcnkzNzE0OTA2Mjc="
+    category: "General"
+    categoryID: "DIC_kwDOFiR_Q84CfPV2"
+    mapping: "og:title"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    loading: "lazy"
 
   profileMode:
     enabled: false

@@ -1,5 +1,5 @@
 ---
-author: "srijan_"
+author: "srijan, anubhab"
 title: "Hello world!"
 date: "2021-04-27"
 description: "cbrtl - now live"
@@ -11,7 +11,7 @@ weight: 1
 # What is cbrtl?
 
 **cbrtl** is an attempt at creating a tight knit group of programmers to showcase and collaborate
-on projects and 
+on fun projects.
 
 ## What do we do here?
 
@@ -24,22 +24,23 @@ on projects and
 - Create and maintain **dev-journals and blogs**.
 
 ## What is the end goal?
-Merely to promote Open Source culture and proper software development within our college.
+
+Merely to promote Open Source culture and proper software development
 
 ## How far down the road are we?
+
 Not that far, the egg has just been laid.
 As of the time of writing this post, we have just started out.
 For the effort to work out, we welcome interested folks over :) 
 
 ## What can I do?
+
 Just what you've been doing so far, but with more people!
 
-If you have any interesting projects that you have already been working on,
-let us know and we'll put them on the cbrtl page for more people to see. 
-Note that there is some criteria that projects must qualify, some of these are intentionally vague. 
-But as long as you're doing more than following a course or tutorial, it's likely to be accepted :)
+If you have any interesting projects that you have already been working on, let us know and we'll put them on the cbrtl page for more people to see. Note that there is some criteria that projects must qualify, some of these are intentionally vague. But as long as you're doing more than following a course or tutorial, it's likely to be accepted :)
 
 # Volunteering to cbrtl
+
 We are looking for volunteers for some roles.
 Note however, that there is no strict mandate for responsibilities.
 As long as you're capable of adding *something* of value, no matter how small, shoot us a message!
@@ -68,6 +69,7 @@ contributions, we appreciate it.
 Volunteering is not druge work, and active frequent contributions are appreciated, but not required.
 
 # The kind of software we want to write
+
 We firmly believe in re-inventing the wheel.
 Writing software close to the metal helps us closely understand the behind-the-scenes of software that most take for granted.
 While any creative project is welcome, here are some ideas that adhere to the spirit:
@@ -81,6 +83,10 @@ While any creative project is welcome, here are some ideas that adhere to the sp
 - Voxel renderers
 - TCP/IP stack
 - VCS
+- Web servers
+- Web browsers
+- Text editors
+- Anything else that is NOT a react todo app, or a vue planner app, or a terminal tic-tac-toe game.
 
 All of these are but regular software that we tend to take for granted, that can be (and have been) written from scratch.
 We encourage all kinds of creative projects no matter how basic.
