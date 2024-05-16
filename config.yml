@@ -64,7 +64,8 @@ params:
     reactionsEnabled: "1"
     emitMetadata: "0"
     inputPosition: "bottom"
-    theme: "preferred_color_scheme"
+    lightTheme: "noborder_light"
+    darkTheme: "noborder_gray"
     lang: "en"
     loading: "lazy"
 
