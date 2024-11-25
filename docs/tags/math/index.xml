@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>math on cbrtl</title><link>https://cbrtl.github.io/tags/math/</link><description>Recent content in math on cbrtl</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title>Fourier Series</title><link>https://cbrtl.github.io/posts/fourier/</link><pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/fourier/</guid><description>An interactive guide to Fourier series</description><content:encoded><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Math on cbrtl</title><link>https://cbrtl.github.io/tags/math/</link><description>Recent content in Math on cbrtl</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title>Fourier Series</title><link>https://cbrtl.github.io/posts/fourier/</link><pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/fourier/</guid><description>An interactive guide to Fourier series</description><content:encoded><![CDATA[<blockquote>
 <p><strong>NOTE:</strong> This blog post is taken from <a href="https://injuly.in/blog/fourier-series">injuly&rsquo;s website</a></p>
 </blockquote>
 <p>Try drawing something on the first canvas, and watch two sets of mechanical alien arms retrace your sketch:</p>
@@ -125,7 +125,7 @@ Instead, we decide upon a fixed number of terms that approximate our function we
 For the remainder of this post our goal with Fourier series is to <strong>approximate periodic functions with sums of simpler sine/cosine functions</strong>.</p>
 <h2 id="drawing-with-the-fourier-series">Drawing with the Fourier series</h2>
 <p>If you wish to understand how the Fourier series works before seeing it in action,
-you can skip this section and read ahead to <a href="#proof">the proof</a>, then come back here.</p>
+you can skip this section and read ahead to <a href="/posts/fourier/#proof">the proof</a>, then come back here.</p>
 <p>So, How do we go from decomposing time domain functions to recreating sketches?</p>
 <p>Imagine you&rsquo;re drawing a sketch on a square sheet of paper.
 You are to draw your sketch, start to finish, without lifting the nib of your pen from the paper&rsquo;s surface.

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>cbrtl</title><link>https://cbrtl.github.io/</link><description>Recent content on cbrtl</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello world!</title><link>https://cbrtl.github.io/posts/what-and-why/</link><pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/what-and-why/</guid><description>cbrtl - now live</description><content:encoded><![CDATA[<h1 id="what-is-cbrtl">What is cbrtl?</h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>cbrtl</title><link>https://cbrtl.github.io/</link><description>Recent content on cbrtl</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://cbrtl.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello world!</title><link>https://cbrtl.github.io/posts/what-and-why/</link><pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/what-and-why/</guid><description>cbrtl - now live</description><content:encoded><![CDATA[<h1 id="what-is-cbrtl">What is cbrtl?</h1>
 <p><strong>cbrtl</strong> is an attempt at creating a tight knit group of programmers to showcase and collaborate
 on fun projects.</p>
 <h2 id="what-do-we-do-here">What do we do here?</h2>
@@ -76,6 +76,259 @@ We encourage all kinds of creative projects no matter how basic.
 But you can expect the above group projects to come to life as the community grows.</p>
 <h2 id="showcasing-your-project">Showcasing your project</h2>
 <p>If you want to showcase your project on our github org, then reach out to us on discord or the mailing list.</p>
+]]></content:encoded></item><item><title>Conway's Game of Life</title><link>https://cbrtl.github.io/posts/game-of-life/</link><pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/game-of-life/</guid><description>Understanding computational models and implementing Conway&amp;#39;s Game of Life using simple rules that mimic real-life population dynamics.</description><content:encoded><![CDATA[
+
+<script type="module" src="/js/game-of-life/main.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ]
+  });">
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<h1 id="abstract-machines-and-the-computational-universe">Abstract machines and the computational universe</h1>
+<p>Automata theory is a branch of theoretical computer science that deals with abstract machines and the computational problems that can be solved using these machines. Automata are mathematical models of a machine that can perform certain computations. Essentialy, these are <strong>fundamental units of computation</strong> that can process input and produce output based on a set of rules. They are used to model and analyze computational systems, study the limits of computation, and explore the properties of formal languages(sets of strings of symbols that can be recognized by automata).</p>
+<p>For example, this automaton can be thought of as a machine that processes input strings of 0s and 1s and produces an output based on a set of rules, such as:</p>
+<p>$f: {0, 1}^* \rightarrow {0, 1}^*$</p>
+<p>where $f$ is a function that takes an input string of $0$s and $1$s and produces an output string of $0$s and $1$s, based on the following rules:</p>
+<ul>
+<li>If the input string contains an odd number of 1s, the output string should be 1.</li>
+<li>If the input string contains an even number of 1s, the output string should be 0.</li>
+</ul>
+<p>This automaton can be represented as a state machine, with states representing the number of 1s seen so far and transitions based on the input symbols. The machine starts in an initial state and transitions between states based on the input symbols, eventually reaching a final state that determines the output.</p>
+<p>In simpler terms, think of it this way: an automaton is the smallest part of a machine that can operate independently and perform a specific task. Breaking this unit further would lead us nowhere, as it is the smallest indivisible part of a machine that can perform a computation. Like, a gearbox in a car is an automaton that performs the task of changing gears, and it can&rsquo;t be broken down further into smaller parts that perform any meaningful task.</p>
+<h1 id="conways-game-of-life">Conway&rsquo;s Game of Life</h1>
+<p>Building on automata theory, cellular automata are computational systems used to model complex systems and nonlinear dynamics. They are made up of simple, identical units called cells that evolve in parallel at discrete time steps. The state of each cell is determined by the states of its neighbouring cells, and the cells update their states based on a set of rules. Cellular automata have been used to study a wide range of phenomena, including biological systems, physical processes, and social dynamics.</p>
+<p>A fascinating aspect of cellular automata is their ability to exhibit complex and unpredictable behaviour from simple rules that mimic real-life population dynamics. Conway&rsquo;s Game of Life is a simple cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. Specifically, the game explores how simple rules governing individual cells can lead to emergent complexity and patterns over time, including stable structures, oscillating patterns, and even patterns that exhibit motion.</p>
+<p>A few rules govern the evolution of the game are as follows:</p>
+<ol>
+<li>
+<p>Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <canvas id="lessthantwo"  style="border: 1px solid black;"  >
+    </canvas>
+    <span style="padding: 10px; color: black !important;">
+ -->
+    </span>
+    <canvas id="lessthantwodead"  style="border: 1px solid black;"  >
+    </canvas>
+</div>
+</p>
+</li>
+<li>
+<p>Any live cell with two or three live neighbours lives on to the next generation.
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <canvas id="twoorthree"  style="border: 1px solid black;"   >
+    </canvas>
+    <span style="padding: 10px; color: black !important;">
+ -->
+    </span>
+    <canvas id="twoorthreelive"  style="border: 1px solid black;"   >
+    </canvas>
+</div>
+</p>
+</li>
+<li>
+<p>Any live cell with more than three live neighbours dies, as if by overpopulation.
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <canvas id="morethanthree"  style="border: 1px solid black;"    >
+    </canvas>
+    <span style="padding: 10px; color: black !important;">
+ -->
+    </span>
+    <canvas id="morethanthreedead"  style="border: 1px solid black;"    >
+    </canvas>
+</div>
+</p>
+</li>
+<li>
+<p>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <canvas id="three"  style="border: 1px solid black;">
+    </canvas>
+    <span style="padding: 10px; color: black !important;">
+ -->
+    </span>
+    <canvas id="threelive"  style="border: 1px solid black;">
+    </canvas>
+</div>
+<br>
+    
+</p>
+</li>
+</ol>
+<p>The game is played on a two-dimensional grid of cells, each of which can be in one of two states: alive or dead. The game proceeds in discrete steps, with each step representing a generation of cells. At each step, the game applies the rules to each cell in the grid simultaneously, updating the grid to reflect the new state of each cell based on its current state and the states of its neighbours.</p>
+<h1 id="the-game-of-life-in-action">The Game of Life in Action</h1>
+<p>
+
+<div style="text-align: start; width: 100%;">
+    <button id="reset">Reset</button>
+</div>
+<br>
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+<canvas id="game-of-life"  style="border: 1px solid black;">
+</canvas>
+</div>
+<div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 20px;">
+    <input type="range" id="grid-slider" name="speed" min="5" max="15" value="10">
+    <label for="speed" style="margin-top: 10px;">Grid</label>
+    <span id="time" style="margin-top: 10px;"></span>
+    <span id="population" style="margin-top: 10px;"></span>
+</div>
+
+<div class="container" style="display: flex; align-items: center; justify-content: start; margin-top: 20px;">
+    <label for="speed" style="margin-right: 10px;">Speed </label>
+    <input type="range" id="speed-slider" name="speed" min="1" max="10" value="1">
+</div>
+
+<br>
+<div>
+    <button id="start-stop" style="margin-right: 10px;">Start</button>
+</div>
+<br>
+
+<strong>Generations</strong>: <span id="generation">0</span></p>
+<p>To start, design your initial configuration by clicking on the cells to toggle their state. Once you&rsquo;re ready, click the &ldquo;Start/Stop&rdquo; button to watch the game evolve. You can pause the game at any time by clicking the &ldquo;Stop&rdquo; button, and clear the grid by clicking the &ldquo;Clear&rdquo; button.</p>
+<p>The speed of the game can be adjusted by changing the <code>speed</code> slider. The game will evolve at a faster pace as the slider is moved to the right. The <code>grid</code> slider can be used to adjust the size of the grid, allowing for larger or smaller configurations.</p>
+<h1 id="a-turing-complete-machine">A Turing Complete Machine</h1>
+<p>This might seem cool; just a game, right? It&rsquo;s more interesting than that. To explain why, I would have to make your brain hurt a little bit more.</p>
+<p>Automata like these can be classified into two main categories: finite automata( finite states, finite memory) and infinite automata(infinite states, infinite memory). For example, a finite automaton can be used to recognize whether a given input string is a valid email address or a phone number(A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions">regular expression</a>). Infinite automata are more complex and powerful. For example, an infinite automaton can be used to recognize whether a given input string is a valid programming language statement or a mathematical expression. (Compilers and interpreters). Game of Life is a prime example of an infinite automaton, as it can simulate complex systems and exhibit infinite states from a fixed configuration.</p>
+<p>Finite automata can be further classified into:</p>
+<ol>
+<li>Deterministic Finite Automata (DFA): A determined outcome for a given input.</li>
+<li>Non-Deterministic Finite Automata (NFA): Various outcomes for a given input.</li>
+</ol>
+<p>However, both DFA and NFA:</p>
+<ul>
+<li>Operate on a finite amount of memory (the states).</li>
+<li>Can only make decisions based on the current state and the immediate input.</li>
+<li>Cannot handle languages that require unbounded memory, like those involving nested structures or long-term dependencies.</li>
+</ul>
+<p>To solve these issues, a Pushdown Automaton (PDA) was introduced. A PDA is an automaton with a <strong>stack</strong> that can store an unbounded amount of memory. It can push and pop symbols onto the stack, allowing it to handle <strong>context-free languages</strong>( languages that can be described by context-free grammar; languages powerful enough to describe many programming language constructs, such as nested structures (e.g., balanced parentheses, if-else blocks)) that require more complex memory access. Simply put, a PDA can recognize languages that a DFA or NFA cannot, making it a more powerful model of computation.</p>
+<p>Bear with me, this useless information will make sense in a bit; I promise. The concepts of FSMs lay the groundwork for understanding why this cellular automaton is such a fascinating piece of work by this brilliant British mathematician.</p>
+<p>However, a PDA still has limitations:</p>
+<ul>
+<li>The stack provides memory, but it&rsquo;s limited in structure (LIFO- Last in First Out).</li>
+<li>It can&rsquo;t handle languages requiring more general or unbounded memory access.</li>
+</ul>
+<p>This led to the development of the Turing Machine, a theoretical model of computation that can simulate any algorithm or computation that can be performed by a digital computer. A Turing machine consists of an infinite tape divided into cells, a read/write head that can move left or right along the tape and a finite set of states. The machine can read the symbol on the current cell, write a new symbol, move the tape left or right, and change its state based on a set of rules.</p>
+<p>Turing Machine is the pinnacle of computation, as it laid the foundation for modern computers and computational theory. It can, in theory, solve any computational problem that can be solved by a digital computer, making it a universal model of computation. Whatever we see today, from the smallest microcontroller to the most powerful supercomputers, satelite systems, and AI, all are based on the principles of the Turing Machine.</p>
+<p>The Game of Life has been shown to be Turing complete, meaning it can simulate any computation that a Turing machine can perform, given the right initial conditions. Certain configurations in the Game of Life can be used to simulate logic gates, memory, and other components of a computer, demonstrating its computational universality and performing universal computation, making it a fascinating area of study for computer scientists and mathematicians alike. It has been studied extensively by computer scientists, mathematicians, and physicists, and has been used to explore a wide range of topics, including complexity theory, artificial life, and emergent behaviour.</p>
+<h2 id="building-a-cpu-in-the-game-of-life">Building A CPU in the Game of Life</h2>
+<p>Having come this far, let&rsquo;s attempt to build a CPU in the Game of Life. A CPU essentially is built up of three main components:</p>
+<ol>
+<li>ALU (Arithmetic Logic Unit): Performs arithmetic and logical operations on data.</li>
+<li>Memory: Stores data and instructions that are currently being executed by the CPU.</li>
+<li>Control Unit: Manages the CPU&rsquo;s operations by directing data between the ALU, memory, and I/O devices.</li>
+</ol>
+<h4 id="arithmetic-logic-unit">Arithmetic Logic Unit</h4>
+<p>The <strong>ALU</strong> is responsible for performing arithmetic and logical operations on data. It consists of a number of logic gates, adders, and other components that work together to perform operations such as addition, subtraction, AND, OR, and NOT.
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div style="margin: 10px;">
+        <canvas id="alu-addition" style="border: 1px solid black;"></canvas>
+        <div>Adder Circuit</div>
+    </div>
+    <div style="margin: 10px;">
+        <canvas id="alu-andgate" style="border: 1px solid black;"></canvas>
+        <div>AND Gate</div>
+    </div>
+</div>
+</p>
+<p>In addition, you can set up a glider collision that represents the addition of two binary values. Each glider can be thought of as representing a binary input (either 0 or 1). The gliders in this pattern are designed to approach each other from opposite directions. When two gliders collide, they interact to produce an output, which can be interpreted as the sum of the two inputs. This collision represents the addition of two binary values, with the output glider moving in a different direction depending on the inputs.</p>
+<ul>
+<li>If only one glider is present (input 1 + 0 or 0 + 1), it moves through without a collision, representing a result of 1.</li>
+<li>If two gliders collide (input 1 + 1), they create a predictable pattern that can represent the sum of these inputs, often leaving behind a specific &ldquo;output&rdquo; glider that can represent the result.</li>
+</ul>
+<p>Similarly, An AND gate can be created by positioning still-life patterns (static configurations that do not change) to manipulate gliders. If both inputs are &ldquo;1&rdquo; (represented by gliders arriving simultenously), they will interact to produce an output.</p>
+<ul>
+<li>If both gliders arrive at the interaction point simultaneously, they will interact in a way that produces a specific pattern, representing the output 1 for an AND operation.</li>
+<li>If only one glider arrives, it will pass through or interact with other cells without producing the 1 pattern, representing an output of 0.</li>
+</ul>
+<h2 id="memory-unit">Memory Unit</h2>
+<p><strong>Memory Unit</strong> stores data and instructions that are currently being executed by the CPU. It consists of registers, cache, and main memory. It is responsible for storing and retrieving data from memory locations.</p>
+<h5 id="blinker">Blinker</h5>
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div style="margin: 10px;">
+        <canvas id="memory" style="border: 1px solid black;"></canvas>
+        <div>Memory Cell(1 block)</div>
+    </div>
+</div>
+
+
+<p>This configuration is a 3x3 blinker, which oscillates between two shapes in two generations. Its oscillation does not spread or decay, so it remains contained and stable in its oscillating state.</p>
+<p>Memory can be represented by stable patterns that remain constant unless disturbed by an external glider or oscillator. Stable patterns like blocks act as &ldquo;bits&rdquo; that can be toggled on or off by gliders, representing data storage. These two states can represent binary values (0 and 1) in a very simplistic way, with each state encoding one bit of information depending on its phase. This stability in position and periodic change makes it suitable for acting as a memory cell, as it reliably returns to a known state every two generations.</p>
+<p>Similarly, an external pattern could be designed to change or &ldquo;write&rdquo; to the memory cell, altering its oscillation phase to represent a different binary state.</p>
+<h2 id="control-unit">Control Unit</h2>
+<p>The control unit manages the CPU&rsquo;s operations by directing data between the ALU, memory, and I/O devices. It fetches and decodes instructions, then signals the ALU and memory to execute.
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div style="margin: 10px;">
+        <canvas id="control" style="border: 1px solid black;"></canvas>
+        <div>Control Unit</div>
+    </div>
+</div>
+</p>
+<p>This pattern is designed to function as a control unit by leveraging the behavior of known oscillators and spaceships in the Game of Life to produce predictable and repeatable outcomes. The pattern includes configurations that will evolve into gliders, which are small patterns that move across the grid over successive generations. Gliders can be used to transmit information or interact with other patterns in the grid.</p>
+<h3 id="glider-gun">Glider gun</h3>
+<p>A glider gun is a configuration of cells that emits gliders at regular intervals. It can be used to create a clock signal that controls the timing of operations in the CPU.</p>
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div style="margin: 10px;">
+        <canvas id="glider" style="border: 0.2px solid black;"></canvas>
+        <div>Glider Gun</div>
+    </div>
+</div>
+
+<p>A single block here can represent &lsquo;1&rsquo; and an empty cell can represent &lsquo;0&rsquo;. The glider gun emits gliders at regular intervals, which can be used to synchronize the operations of the CPU. These inputs can work with adders, logic gates, and memory cells to perform ALU operations, store data, and control the flow of information within the CPU.</p>
+<h2 id="a-fully-functional-computer">A Fully Functional Computer</h2>
+<p>To build a fully functional computer, you would need to design and implement a wide range of components, including registers, multiplexers, and arithmetic logic units, and connect them to form a complete system. Some of the components you would need to build include:</p>
+<p>ALU components:</p>
+<ul>
+<li>Adders (Half and Full- they can be used to add binary numbers) <a href="/posts/game-of-life/#arithmetic-logic-unit">⏎</a></li>
+<li>Logic Gates (AND, OR, NOT, XOR, etc.- they perform logical operations on binary inputs) <a href="/posts/game-of-life/#arithmetic-logic-unit">⏎</a></li>
+<li>Multiplexers( MUX- they select one of many inputs and route it to the output, used to handle multiple data inputs and control signals)</li>
+<li>Registers( they store data temporarily during processing and can be used to store intermediate results)</li>
+</ul>
+<p>Memory components:</p>
+<ul>
+<li>Flip-Flops (they store a single bit of data using feedback) <a href="/posts/game-of-life/#memory-unit">⏎</a></li>
+<li>RAM (Random Access Memory- they store data that can be read and written to used for storing data and instructions specific to the program)</li>
+<li>ROM (Read-Only Memory- they store data that can only be read from- used for storing fixed data and instructions that do not change)</li>
+</ul>
+<p>Control Unit components:</p>
+<ul>
+<li>Finite State Machines (FSM- they have a finite number of states and transition between states based on inputs) <a href="/posts/game-of-life/#control-unit">⏎</a></li>
+<li>Clock Signals (they provide a timing mechanism for the CPU, controlling the rate at which operations are performed- using glider guns) <a href="/posts/game-of-life/#control-unit">⏎</a></li>
+<li>Instruction Decoders (they interpret instructions and direct the flow of data within the CPU)</li>
+</ul>
+<h1 id="next">Next</h1>
+<p>While it is theoretically possible to build a computer within the Game of Life, it is painstakingly complex and fun! It requires a deeper understanding of logic gates, instruction sets, implementing memory, and control units.</p>
+<p>Building the CPU would take you to combine these components to carry out fully functional operations. It would be a fun and challenging project to undertake, requiring a deep understanding of digital logic and computer architecture. The Game of Life serves as a fascinating model of how complexity can arise from simplicity, providing insight into topics such as self-organization, emergence, and cellular automata theory.</p>
+<p><a href="https://nicholas.carlini.com/writing/2021/unlimited-register-machine-game-of-life.html">Here&rsquo;s an actual CPU built in the Game of Life by Nicholas Carlini</a>. In this series of posts, he tries to explain how he built digital logic gates, multiplexers, and registers in the Game of Life. I would love to do this someday when NYU is not down my throat threatening to kick me out for not doing my assignments.</p>
+<p><em>If you choose carefully enough, you can make an entire computer inside the game, powered entirely by little things running around based only on those same simple rules of what lives and what dies in the next generation. An entire computer that could, in theory, perform any calculation that your computer could. It&rsquo;s an interesting mathematical diversion depicting Turing&rsquo;s completeness, the chaos that arises from simple rules, and it just looks pretty.</em>&quot;</p>
+<p>- Reddit</p>
+<p>Also, someone built a <a href="https://www.youtube.com/watch?v=xP5-iIeKXE8">Game of Life inside a computer built on top of THE GAME OF LIFE!!</a></p>
 ]]></content:encoded></item><item><title>Fourier Series</title><link>https://cbrtl.github.io/posts/fourier/</link><pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate><guid>https://cbrtl.github.io/posts/fourier/</guid><description>An interactive guide to Fourier series</description><content:encoded><![CDATA[<blockquote>
 <p><strong>NOTE:</strong> This blog post is taken from <a href="https://injuly.in/blog/fourier-series">injuly&rsquo;s website</a></p>
 </blockquote>
@@ -203,7 +456,7 @@ Instead, we decide upon a fixed number of terms that approximate our function we
 For the remainder of this post our goal with Fourier series is to <strong>approximate periodic functions with sums of simpler sine/cosine functions</strong>.</p>
 <h2 id="drawing-with-the-fourier-series">Drawing with the Fourier series</h2>
 <p>If you wish to understand how the Fourier series works before seeing it in action,
-you can skip this section and read ahead to <a href="#proof">the proof</a>, then come back here.</p>
+you can skip this section and read ahead to <a href="/posts/fourier/#proof">the proof</a>, then come back here.</p>
 <p>So, How do we go from decomposing time domain functions to recreating sketches?</p>
 <p>Imagine you&rsquo;re drawing a sketch on a square sheet of paper.
 You are to draw your sketch, start to finish, without lifting the nib of your pen from the paper&rsquo;s surface.
