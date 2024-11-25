@@ -82,7 +82,7 @@ params:
         url: archives
       - name: Tags
         url: tags
-  EnableInstantClick: true
+  EnableInstantClick: false
 
   homeInfoParams:
     Title: "cbrtl"
