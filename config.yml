@@ -68,6 +68,8 @@ params:
     darkTheme: "noborder_gray"
     lang: "en"
     loading: "lazy"
+  disableScrollToTop: false
+  DisableSmoothScroll: false
 
   profileMode:
     enabled: false
