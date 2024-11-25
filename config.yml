@@ -96,7 +96,7 @@ params:
     - name: github
       url: "https://github.com/cbrtl"
     - name: discord
-      url: "https://discord.gg/3qry3u569v"
+      url: "https://discord.gg/F3wP4fUM4d"
     - name: RsS
       url: "index.xml"
 
@@ -146,6 +146,17 @@ markup:
     # lineNos: true
     noClasses: true
     style: bw
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
 
 privacy:
   vimeo:
